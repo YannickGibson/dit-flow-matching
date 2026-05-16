@@ -1,0 +1,17 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# Datasets & training artifacts
+data/
+checkpoints/
+samples/
+fid_real/
+fid_fake/
+
+# Outputs
+grid.png
+results.md
+slurm-*.out
+wandb/

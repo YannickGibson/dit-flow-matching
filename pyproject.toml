@@ -1,0 +1,25 @@
+[project]
+name = "dit-fashionmnist"
+version = "0.1.0"
+description = "DiT + flow matching for class-conditional FashionMNIST generation"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { file = "LICENSE" }
+dependencies = [
+    # CUDA 12.4 build - the cluster A100 nodes run a 12.4 driver. The default
+    # PyPI torch ships CUDA 13 wheels, which silently fall back to CPU here.
+    "torch==2.6.0",
+    "torchvision==0.21.0",
+    "numpy",
+    "torch-fidelity>=0.3",
+    "wandb>=0.16",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
