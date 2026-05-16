@@ -43,6 +43,18 @@ No `uv`? Fall back to `pip install -r requirements.txt` then drop the
 CIFAR-10 is visually richer and harder, so the DiT is scaled up for it. Both
 configs live in `data_utils.py`.
 
+## Hardware
+
+Measured on a single NVIDIA A100 (40 GB), batch size 256, 50-step sampling:
+
+| Dataset | Training VRAM | Sampling VRAM | Per image | 100-image grid |
+|---|---|---|---|---|
+| FashionMNIST | ~7 GB | <1 GB | ~28 ms | ~2.8 s |
+| CIFAR-10 | ~16 GB | ~1.6 GB | ~81 ms | ~8.1 s |
+
+Per-image timings are amortized over a batch. Training fits on a single
+mid-range GPU; sampling is light enough to run almost anywhere.
+
 ## What's in here
 
 | File | Purpose |
