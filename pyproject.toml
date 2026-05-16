@@ -1,5 +1,5 @@
 [project]
-name = "dit-fashionmnist"
+name = "dit-flow-matching"
 version = "0.1.0"
 description = "DiT + flow matching for class-conditional FashionMNIST generation"
 readme = "README.md"

@@ -18,7 +18,7 @@ classifier-free guidance scale 2.0, 50 sampling steps.*
 ## Quickstart
 
 ```bash
-git clone https://github.com/YannickGibson/dit-fashionmnist.git && cd dit-fashionmnist
+git clone https://github.com/YannickGibson/dit-flow-matching.git && cd dit-flow-matching
 uv sync                                    # creates .venv and installs everything
 
 uv run python train.py --dataset fashionmnist           # ~2-4h on one A100
