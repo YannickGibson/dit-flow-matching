@@ -7,8 +7,8 @@ A reproduction of the DiT architecture
 ([Peebles & Xie, 2022](https://arxiv.org/abs/2212.09748)), trained with a
 **conditional flow-matching** objective
 ([Lipman et al., 2023](https://arxiv.org/abs/2210.02747)) instead of the
-original DDPM noise prediction. Pixel-space 32x32, no VAE, runs on a single GPU.
-The same model handles grayscale FashionMNIST and RGB CIFAR-10 via `--dataset`.
+original DDPM noise prediction. Pixel-space 32x32, runs on a single GPU. The
+same model handles grayscale FashionMNIST and RGB CIFAR-10 via `--dataset`.
 
 ![Generated samples](assets/samples.png)
 
