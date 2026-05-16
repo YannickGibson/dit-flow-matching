@@ -121,6 +121,7 @@ class DiT(nn.Module):
                  depth=8, heads=4, num_classes=10, cfg_dropout=0.1):
         super().__init__()
         self.in_ch = in_ch
+        self.img_size = img_size
         self.patch_size = patch_size
         self.grid = img_size // patch_size
         num_patches = self.grid**2

@@ -25,14 +25,15 @@ def flow_matching_loss(model, x_data, y):
 
 
 @torch.no_grad()
-def sample(model, n, class_labels, num_steps=50, cfg_scale=2.0,
-           img_size=32, in_ch=1, device="cuda"):
+def sample(model, n, class_labels, num_steps=50, cfg_scale=2.0, device="cuda"):
     """Generate `n` images via Euler integration of the velocity field.
 
-    cfg_scale = 1.0 disables classifier-free guidance.
+    Channel count and resolution are taken from the model, so this works for
+    both grayscale FashionMNIST and RGB CIFAR-10. cfg_scale = 1.0 disables
+    classifier-free guidance.
     """
     model.eval()
-    x = torch.randn(n, in_ch, img_size, img_size, device=device)
+    x = torch.randn(n, model.in_ch, model.img_size, model.img_size, device=device)
     null = torch.full_like(class_labels, model.y_embed.num_classes)
     dt = 1.0 / num_steps
 

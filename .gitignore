@@ -7,8 +7,8 @@ __pycache__/
 data/
 checkpoints/
 samples/
-fid_real/
-fid_fake/
+fid_real_*/
+fid_fake_*/
 
 # Outputs
 grid.png
