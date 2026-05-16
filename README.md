@@ -47,7 +47,7 @@ configs live in `data_utils.py`.
 
 Measured on a single NVIDIA A100 (40 GB), batch size 256, 50-step sampling:
 
-| Dataset | Training VRAM | Sampling VRAM | Per image |
+| Dataset | Training VRAM | Sampling VRAM | Sampling time / image |
 |---|---|---|---|
 | FashionMNIST | ~7 GB | <1 GB | ~28 ms |
 | CIFAR-10 | ~16 GB | ~1.6 GB | ~81 ms |
