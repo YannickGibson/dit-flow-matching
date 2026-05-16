@@ -3,17 +3,18 @@
 Class-conditional image generation with a **Diffusion Transformer**, trained
 from scratch.
 
-A from-scratch reproduction of the DiT architecture
+A reproduction of the DiT architecture
 ([Peebles & Xie, 2022](https://arxiv.org/abs/2212.09748)), trained with a
 **conditional flow-matching** objective
 ([Lipman et al., 2023](https://arxiv.org/abs/2210.02747)) instead of the
 original DDPM noise prediction. Pixel-space 32x32, no VAE, runs on a single GPU.
 The same model handles grayscale FashionMNIST and RGB CIFAR-10 via `--dataset`.
 
-![CIFAR-10 samples](assets/samples_cifar10.png)
+![Generated samples](assets/samples.png)
 
-*CIFAR-10 samples from the ~32M-param DiT after 600 epochs, one row per class,
-classifier-free guidance scale 2.0, 50 sampling steps.*
+*Class-conditional samples, one row per class. Left: CIFAR-10 (~32M-param DiT,
+600 epochs). Right: FashionMNIST (~10M-param DiT, 120 epochs). Classifier-free
+guidance scale 2.0, 50 sampling steps.*
 
 ## Quickstart
 
@@ -88,8 +89,6 @@ Live dashboard:
 ## Results
 
 ### FashionMNIST
-
-![FashionMNIST samples](assets/samples_fashionmnist.png)
 
 Trained 120 epochs on one A100. FID computed over 5,000 generated images vs.
 the test set.
